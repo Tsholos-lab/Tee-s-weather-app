@@ -7,9 +7,9 @@ function updateWeather(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
-  console.log(response.data.condition.description);
-
+  iconElement.innerHTML = `<img src="${response.data.condition.icon.url}" class="weather-icon"/>`;
   timeElement.innerHTML = formatDate(date);
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = `${date.getDay()} ${date.getHours()}:${date.getMinutes()}`;
@@ -34,7 +34,7 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   if (minutes < 10) {
-    minutes = "0${minutes}";
+    minutes = `0${minutes}`;
   }
 
   return `${day} ${hours}:${minutes}`;
