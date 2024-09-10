@@ -3,28 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tee Weather App</title>
-    <style src="src/style.css"></style>
+    <title>Tees Weather App</title>
+    <link rel="stylesheet" href="src/style.css"/>
   </head>
   <body>
+    <div class="weather-app">
     <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="Search" />
+      <form class="search-form">
+        <input
+          type="search"
+          placeholder="Enter a city.."
+          required
+          id="search-form-input"
+        />
+        <input type="submit" value="Search" class="search-form-button" />
       </form>
     </header>
     <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Tuesday 14:49, scattered clouds
+      <div class="weather-data">
+        <h1 class="weather-city" id="city"></h1>
+        <p class="weather-details">
+         <span id="time"></span><span id="description">scattered clouds</span>
           <br />
-          Humidity: 66%, Wind: 3.13km/h
+          Humidity: <strong id="humidity"></strong>, Wind:<strong id="wind-speed" ></strong>
         </p>
       </div>
-      <div>🌤️ 12°C</div>
+      <div class="weather-temperature-container">
+        <div class="weather-icon"></div>
+        <div class="weather-temperature"></div>
+        <div class="weather-unit">°C</div>
+      </div>
+    </div>
     </main>
-
+    </body>
     <footer>
       This project was coded by
       <a href="https://github.com/matthieua/" target="_blank"> Matt Delac</a>,
@@ -37,6 +48,7 @@
         >hosted on Netlify</a
       >
     </footer>
-    <script src="src/index.js"></script>
-  </body>
+    </div>
+</body>
+<script src="src/index.js"></script>
 </html>
